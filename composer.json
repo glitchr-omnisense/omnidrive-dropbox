@@ -1,0 +1,26 @@
+{
+    "name": "omnidrive/dropbox",
+    "type": "library",
+    "description": "Omnidrive Dropbox: a folder of Dropbox as an omnidrive drive, through spatie/flysystem-dropbox - an access token or a refresh token renewed on its own, a prefix, temporary links.",
+    "keywords": ["storage", "dropbox", "flysystem", "omnidrive"],
+    "homepage": "https://github.com/glitchr-studio/omnidrive-dropbox",
+    "license": "MIT",
+    "authors": [{"name": "Marco Meyer", "email": "marco.meyer@glitchr.io"}],
+    "require": {
+        "php": ">=8.2",
+        "guzzlehttp/guzzle": "^7.0",
+        "omniscient/omnidrive": "^1.0@dev",
+        "spatie/flysystem-dropbox": "^3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.0"
+    },
+    "autoload": {
+        "psr-4": {"Omnidrive\\Dropbox\\": ""},
+        "exclude-from-classmap": ["/Tests/"]
+    },
+    "autoload-dev": {
+        "psr-4": {"Omnidrive\\Dropbox\\Tests\\": "Tests/"}
+    },
+    "config": {"sort-packages": true}
+}
