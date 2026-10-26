@@ -1,10 +1,10 @@
 # omnidrive/dropbox
 
-A folder of Dropbox as an [omnidrive](https://github.com/glitchr-studio/omnidrive) drive, through
+A folder of Dropbox as an [omnidrive](https://github.com/glitchr-omnisense/omnidrive) drive, through
 spatie/flysystem-dropbox (spatie/dropbox-api, Guzzle).
 
 ```sh
-composer require omniscient/omnidrive omnidrive/dropbox
+composer require omnisense/omnidrive omnidrive/dropbox
 ```
 
 ```php

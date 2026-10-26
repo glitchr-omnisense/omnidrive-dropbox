@@ -1,6 +1,6 @@
 # omnidrive/dropbox
 
-A folder of Dropbox as an [omniscient/omnidrive](https://github.com/glitchr-studio/omnidrive) drive,
+A folder of Dropbox as an [omnisense/omnidrive](https://github.com/glitchr-omnisense/omnidrive) drive,
 through spatie/flysystem-dropbox (spatie/dropbox-api over Guzzle), with its own `DropboxAdapter`
 where spatie's parts from Flysystem's contract and a `RefreshTokenProvider` that renews Dropbox's
 short-lived access tokens.
@@ -15,10 +15,10 @@ short-lived access tokens.
 ## Installation
 
 ```sh
-composer require omniscient/omnidrive omnidrive/dropbox
+composer require omnisense/omnidrive omnidrive/dropbox
 ```
 
-Requires PHP 8.2, `omniscient/omnidrive` (1.x), `spatie/flysystem-dropbox` (^3.0) and
+Requires PHP 8.2, `omnisense/omnidrive` (1.x), `spatie/flysystem-dropbox` (^3.0) and
 `guzzlehttp/guzzle` (^7.0).
 
 ## Credentials
@@ -149,4 +149,4 @@ versions; uploads in sessions; a team member or space.
 
 An independent, unofficial client, not affiliated with Dropbox or Spatie; Dropbox's terms apply to the account and the app. Whoever runs it is responsible for the data it stores and the
 access it gives (a public or temporary address serves the file to whoever holds it); see the core's
-Responsibility section ([omniscient/omnidrive](https://github.com/glitchr-studio/omnidrive#responsibility)).
+Responsibility section ([omnisense/omnidrive](https://github.com/glitchr-omnisense/omnidrive#responsibility)).
