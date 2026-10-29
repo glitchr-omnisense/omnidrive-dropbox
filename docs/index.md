@@ -128,11 +128,11 @@ is not there (`path/not_found`) read is a `FileNotFoundException`; a temporary l
 than four hours is a `DriveException` of operation `temporary_url`. A `refresh_token` without
 `app_key` and `app_secret`, or no credential at all, is an `InvalidConfigException`.
 
-> [!WARNING]
-> Known defect: a refresh token Dropbox refuses (`invalid_grant`) makes every read a
-> `FileNotFoundException` with no reason and `exists()` answer `false`, with PHP warnings from
-> spatie's `BadRequest` (the token endpoint's body has no `error_summary`), where a refused
-> credential is expected to be a `DriveException` naming it (seen in the harness on a recorded 400).
+A refresh token Dropbox refuses (revoked, malformed, or the app's key or secret wrong: the token
+endpoint answers 400 `{"error": "invalid_grant", ...}`), or a token endpoint out of reach, fails
+every operation, `exists()` included, with a `DriveException` naming it - `The "dropbox" drive
+could not read "a.txt": Dropbox refused the refresh token (HTTP 400, invalid_grant)`, its
+previous an `Omnidrive\Dropbox\TokenRefusedException` - never a `FileNotFoundException`.
 
 ## Verified, and not
 

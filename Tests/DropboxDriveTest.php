@@ -60,6 +60,28 @@ final class DropboxDriveTest extends TestCase
         $drive->deleteDirectory('a');
     }
 
+    /**
+     * A refresh token Dropbox refuses (revoked, malformed: the token endpoint answers 400
+     * {"error": "invalid_grant", ...}, Dropbox's OAuth guide) is the drive's failure, named: every
+     * read was a FileNotFoundException with no reason, exists() false, and spatie's BadRequest
+     * warned of a missing error_summary.
+     */
+    public function testARefreshTokenDropboxRefusesIsADriveExceptionNamingIt(): void
+    {
+        $drive = $this->factory()->create(['refresh_token' => 'a-revoked-token', 'app_key' => 'key', 'app_secret' => 'secret'], 'dropbox');
+
+        foreach (['exists' => fn () => $drive->exists('a.txt'), 'read' => fn () => $drive->read('a.txt'), 'write' => fn () => $drive->write('a.txt', 'x')] as $operation => $call) {
+            try {
+                $call();
+                self::fail("$operation went through");
+            } catch (DriveException $e) {
+                self::assertNotInstanceOf(\Omnidrive\Exception\FileNotFoundException::class, $e, $operation);
+                self::assertStringContainsString('Dropbox refused the refresh token', $e->getMessage(), $operation);
+                self::assertStringContainsString('invalid_grant', $e->getMessage(), $operation);
+            }
+        }
+    }
+
     public function testATemporaryLinkServesFourHoursNotMore(): void
     {
         $drive = $this->drive();
