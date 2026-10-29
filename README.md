@@ -46,4 +46,6 @@ addresses with `public_url`, temporary addresses. Nothing is sent until the firs
   `files/create_folder`, which Dropbox's documentation lists as deprecated for their `_v2`
   versions; uploads in sessions (above `chunk_size`); a team member or space.
 
-License: MIT. Unofficial; not affiliated with Dropbox or Spatie.
+## Responsibility
+
+Unofficial; not affiliated with Dropbox or Spatie. Dropbox keeps its own terms (its API's, its branding guidelines); whoever runs this package complies with them, and answers for the access a temporary link gives. MIT licence.
