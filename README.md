@@ -46,6 +46,16 @@ addresses with `public_url`, temporary addresses. Nothing is sent until the firs
   `files/create_folder`, which Dropbox's documentation lists as deprecated for their `_v2`
   versions; uploads in sessions (above `chunk_size`); a team member or space.
 
+## Usage policy
+
+`policy.json` (omnisense/contracts' schema, named in `composer.json` as `extra.omnisense.policy`;
+read on 2026-11-10): The DBX Platform Developer Terms (2025-03-01) and the branding guide. Limits
+unknown (`null`): Dropbox does not publish them (a 429 carries Retry-After). User data as the users
+instruct; production approval past 500 linked users. Uploads in `overwrite` mode, no retry: no write
+is sent twice. Nothing in the drive counts calls; [the family's
+page](https://github.com/glitchr-omnisense/omnidrive/blob/1.x/docs/policies.md) has every
+provider's.
+
 ## Responsibility
 
 Unofficial; not affiliated with Dropbox or Spatie. Dropbox keeps its own terms (its API's, its branding guidelines); whoever runs this package complies with them, and answers for the access a temporary link gives. MIT licence.

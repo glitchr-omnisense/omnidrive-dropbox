@@ -1,0 +1,38 @@
+{
+    "$schema": "https://github.com/glitchr-omnisense/contracts/blob/1.x/resources/usage-policy.schema.json",
+    "provider": "dropbox",
+    "rateLimits": null,
+    "concurrency": null,
+    "rights": {
+        "commercial": "unknown",
+        "openSourceRequired": false,
+        "caching": {
+            "permission": "unknown",
+            "maxTtl": null
+        },
+        "storage": "contract",
+        "redistribution": "contract",
+        "attribution": {
+            "required": false,
+            "text": null,
+            "url": null,
+            "where": []
+        },
+        "licence": null
+    },
+    "requirements": {
+        "key": true,
+        "userAgent": {
+            "required": false,
+            "pattern": null
+        }
+    },
+    "provenance": {
+        "terms": "https://www.dropbox.com/developers/reference/tos",
+        "policy": "https://docs.dropboxapi.com/dropbox-api/docs/performance",
+        "verifiedAt": "2026-11-10",
+        "declaredBy": "maintainer",
+        "contact": null,
+        "notes": "Dropbox's API, under the DBX Platform Developer Terms (posted and effective 2025-03-01, read 2026-11-10). Limits: 'Dropbox does not publish exact rate limits' (the performance guide); a call over them answers 429 too_many_requests with a Retry-After in seconds (too_many_write_operations with 0: retry at once), and the terms forbid working around them (1.3.2): unknown (null). An app in development status links up to 500 Dropbox users; past 50 it has two weeks to apply for production, which Dropbox may deny (the developer guide): a review, not a request limit. Rights: User Data only accessed, stored, transferred and processed as the users instruct (3.4), used and disclosed only as the app needs to function (3.5): storage and redistribution 'contract'; caching and commercial use not addressed: 'unknown'. Branding: the Dropbox marks only to promote the app, never implying Dropbox made, supports or endorses it (5.1), the Developer Branding Guide. The key is the app's (a refresh token with the app key and secret, or an access token). Writes and retries: a write uploads in 'overwrite' mode (spatie/flysystem-dropbox), idempotent; omnidrive builds its client with no chunk retry (0) and Guzzle retries nothing, so no write, delete, move or copy is sent twice."
+    }
+}

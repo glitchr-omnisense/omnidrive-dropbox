@@ -22,5 +22,6 @@
     "autoload-dev": {
         "psr-4": {"Omnidrive\\Dropbox\\Tests\\": "Tests/"}
     },
+    "extra": {"omnisense": {"policy": "policy.json"}},
     "config": {"sort-packages": true}
 }
