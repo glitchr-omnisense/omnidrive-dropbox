@@ -9,7 +9,7 @@
     "require": {
         "php": ">=8.2",
         "guzzlehttp/guzzle": "^7.0",
-        "omnisense/omnidrive": "^1.0@dev",
+        "omnisense/omnidrive": "^1.0",
         "spatie/flysystem-dropbox": "^3.0"
     },
     "require-dev": {
@@ -22,6 +22,6 @@
     "autoload-dev": {
         "psr-4": {"Omnidrive\\Dropbox\\Tests\\": "Tests/"}
     },
-    "extra": {"omnisense": {"policy": "policy.json"}},
+    "extra": {"branch-alias": {"dev-1.x": "1.x-dev"}, "omnisense": {"policy": "policy.json"}},
     "config": {"sort-packages": true}
 }
